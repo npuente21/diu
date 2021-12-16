@@ -3,7 +3,10 @@ import './App.css';
 import {Navbar, Form, FormControl, Nav, Container, Button, Row, Col} from 'react-bootstrap' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
+import Seminario from "./components/Seminarios.js"
 import zoro from "./images/zoro.jpg";
+import semi1 from "./images/semi1.jpeg";
+import semi2 from "./images/semi2.jpg";
 import { BrowserRouter as Router, Route, Switch, Link } from  'react-router-dom';
 function App() {
   return (
@@ -16,8 +19,8 @@ function App() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">SEMINARIOS</Nav.Link>
-        <Nav.Link as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
+      <Nav.Link as={Link} to="/Semis">SEMINARIOS</Nav.Link>
+      <Nav.Link as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
       </Nav>
 
       <Form inline>
@@ -60,10 +63,23 @@ function App() {
      <Exposicion title= "proyectoX" link="https://www3.animeflv.net/anime/ousama-ranking" img={zoro} />
      </Col>
     </Row>
-    </Container>
-    
-      
-      
+    </Container>  
+  </Route>
+
+  <Route path="/Semis">
+    <Container>
+      <Col>
+        <Col className='col-md-4'>
+          <Seminario  title="Transformación Digital" description="Charla de Joaquín Trujillo en la que se nos instruirá sobre los cambios para la transformación digital" img={semi1} linksem="/Semis/seminario1" />
+        </Col>
+        <br/>
+        <br/>
+        <Col className='col-md-4'>
+          <Seminario title="Objetivos de Desarrollo Sostenible" description=" Charla de Alfredo Collado en la que se hablará sobre la importacnia de los ODS en el mundo" img={semi2} linksem="/Semis/seminario2" />
+        </Col>
+      </Col>
+     
+    </Container>   
   </Route>
 </Switch>
 
