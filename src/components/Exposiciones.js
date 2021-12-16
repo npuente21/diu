@@ -1,5 +1,7 @@
 import  React, { useState } from  'react';
+import ReactPlayer from 'react-player'
 import {Col, Row, Container, Button, Alert, Table, Card} from 'react-bootstrap';
+import "./descripcion.css";
 import {Link} from  'react-router-dom';
 
 function Expos(props){
@@ -7,16 +9,37 @@ function Expos(props){
 
     return (
         <Container>
-    <Card style={{ width: '18rem'}}>
-    <Card.Img variant="top" src= {props.img} />
-    <Card.Body>
-    <Card.Title>{props.title}</Card.Title>
-    <Card.Text>
-      {props.description}    </Card.Text>
-    <a href ={props.link}>Más Información</a>
-  </Card.Body>
-</Card>
-    </Container>
+          <Card style={{ width: '18rem'}}>
+          <div>
+            <ReactPlayer
+              url={props.url}
+              className='react-player'
+              controls='true'
+              loop='true'
+              width='100%'
+              height='100%'
+              progressInterval={1000}
+            />
+          </div>
+            <Card.Body>
+              <Card.Title>
+                <center><b>{props.title}</b></center>
+              </Card.Title>
+              <Card.Text>
+                <center className='desc'>
+                  {props.description}
+                </center>
+              </Card.Text>
+              <a href ={props.link}> 
+                <center> Más Información</center>
+              </a>
+            </Card.Body>
+            
+          </Card>
+          
+        </Container>
+
+    
 
 
     ); 
