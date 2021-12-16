@@ -36,12 +36,21 @@ const Logout=()=>{
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-      <Nav.Link as={Link} to="/Semis">SEMINARIOS</Nav.Link>
-      <Nav.Link as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
+      <Nav.Link className='col-md-11 offset-md-8' as={Link} to="/Semis">SEMINARIOS</Nav.Link>
+      <Nav.Link className='col-md-2 offset-md-9' as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
       </Nav>
 
       {count==true&&(
-        <Button onClick={Logout} variant="danger">Cerrar Sesión</Button>
+        <Row>
+          <Col className='col-md-4'>
+            <Button onClick={Logout} variant="outline-info" size='sm' >Mi Proyecto</Button>
+          </Col>
+          <Col className='offset-md-3'>
+            <Button onClick={Logout} variant="danger" size='sm'>Cerrar Sesión</Button>
+          </Col >
+            
+        </Row>
+        
       )}
       {count==false&&(
         <Button as={Link} to= "/Login" variant="outline-success">Iniciar Sesión</Button>
