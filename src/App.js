@@ -5,7 +5,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
 import zoro from "./images/zoro.jpg";
 import { BrowserRouter as Router, Route, Switch, Link } from  'react-router-dom';
+import Login from "./components/login.js";
+import {useSelector, useDispatch} from 'react-redux';
+import { logout } from './redux/actions/autentication';
 function App() {
+  const count= useSelector((store) =>store.autenticacion.logged);
+  const Name=useSelector((store) =>store.autenticacion.Nombre);
+  const dispatch = useDispatch();
+  if (count){
+    var xd = "xd"
+  }else{
+    var xd= "xd`nt"
+  }
+
+const Logout=()=>{
+  dispatch(logout(Name))
+}
+
   return (
     <Router>
    <Navbar bg="light" expand="lg">
@@ -16,27 +32,32 @@ function App() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">SEMINARIOS</Nav.Link>
+        <Nav.Link as={Link}  to="/Sem">SEMINARIOS</Nav.Link>
         <Nav.Link as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
       </Nav>
 
-      <Form inline>
-      <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
-      <Button variant="outline-success">Buscar</Button>
-      </Form>
+      {count==true&&(
+        <Button onClick={Logout} variant="danger">Cerrar Sesión</Button>
+      )}
+      {count==false&&(
+        <Button as={Link} to= "/Login" variant="outline-success">Iniciar Sesión</Button>
+      )}
+      
+      
     </Navbar.Collapse>
   </Container>
 </Navbar>
-<center>
-<h1>Feria de Software</h1> 
-<br/>
-<br/>
-</center>
 
 
 <Switch>
   <Route path="/Expos">
     <Container>
+    <center>
+<h1>Feria de Software {Name}</h1> 
+<br/>
+<br/>
+</center>
+
     <Row >
      <Col className='col-md-4'> 
      <Exposicion title= "proyecto1" link="https://www3.animeflv.net/anime/ousama-ranking" img={zoro} />
@@ -60,11 +81,10 @@ function App() {
      <Exposicion title= "proyectoX" link="https://www3.animeflv.net/anime/ousama-ranking" img={zoro} />
      </Col>
     </Row>
-    </Container>
-    
-      
-      
+    </Container>      
   </Route>
+
+  <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
 </Switch>
 
 </Router>
