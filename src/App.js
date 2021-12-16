@@ -4,7 +4,6 @@ import './App.css';
 import {Navbar, Form, FormControl, Nav, Container, Button, Row, Col} from 'react-bootstrap' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
-import upload from "./images/upload.png";
 import logoFeria from "./images/logo-fesw.png";
 import Seminario from "./components/Seminarios.js"
 import semi1 from "./images/semi1.jpeg";
