@@ -7,11 +7,26 @@ import Exposicion from "./components/Exposiciones.js"
 import upload from "./images/upload.png";
 import logoFeria from "./images/logo-fesw.png";
 import Seminario from "./components/Seminarios.js"
-import zoro from "./images/zoro.jpg";
 import semi1 from "./images/semi1.jpeg";
 import semi2 from "./images/semi2.jpg";
 import { BrowserRouter as Router, Route, Switch, Link } from  'react-router-dom';
+import Login from "./components/login.js";
+import {useSelector, useDispatch} from 'react-redux';
+import { logout } from './redux/actions/autentication';
 function App() {
+  const count= useSelector((store) =>store.autenticacion.logged);
+  const Name=useSelector((store) =>store.autenticacion.Nombre);
+  const dispatch = useDispatch();
+  if (count){
+    var xd = "xd"
+  }else{
+    var xd= "xd`nt"
+  }
+
+const Logout=()=>{
+  dispatch(logout(Name))
+}
+
   return (
     <Router>
     <Navbar bg="light" expand="lg">
@@ -26,23 +41,28 @@ function App() {
       <Nav.Link as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
       </Nav>
 
-      <Form inline>
-      <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
-      <Button variant="outline-success">Buscar</Button>
-      </Form>
+      {count==true&&(
+        <Button onClick={Logout} variant="danger">Cerrar Sesión</Button>
+      )}
+      {count==false&&(
+        <Button as={Link} to= "/Login" variant="outline-success">Iniciar Sesión</Button>
+      )}
+      
+      
     </Navbar.Collapse>
   </Container>
 </Navbar>
-<center>
-<h1>Feria de Software</h1> 
-<br/>
-<br/>
-</center>
 
 
 <Switch>
   <Route path="/Expos">
     <Container>
+    <center>
+<h1>Feria de Software {Name}</h1> 
+<br/>
+<br/>
+</center>
+
     <Row >
      <Col className='col-md-4'> 
      <Exposicion title= "ChainVote" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
@@ -81,6 +101,8 @@ function App() {
      
     </Container>   
   </Route>
+
+  <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
 </Switch>
 
 </Router>
