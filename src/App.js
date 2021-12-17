@@ -11,9 +11,24 @@ import { BrowserRouter as Router, Route, Switch, Link } from  'react-router-dom'
 import Login from "./components/login.js";
 import {useSelector, useDispatch} from 'react-redux';
 import { logout } from './redux/actions/autentication';
+import Proyect from './components/form_proyecto.js';
+
+
+
+
 function App() {
   const count= useSelector((store) =>store.autenticacion.logged);
   const Name=useSelector((store) =>store.autenticacion.Nombre);
+
+  const Titulo= useSelector((store)=> store.proyect_reducer.Titulo)
+  const Descripcion= useSelector((store)=> store.proyect_reducer.Descripcion)
+  const url= useSelector((store)=> store.proyect_reducer.video)
+  const website = useSelector((store)=>store.proyect_reducer.website)
+
+
+
+
+
   const dispatch = useDispatch();
   if (count){
     var xd = "xd"
@@ -35,12 +50,21 @@ const Logout=()=>{
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-      <Nav.Link as={Link} to="/Semis">SEMINARIOS</Nav.Link>
-      <Nav.Link as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
+      <Nav.Link className='col-md-11 offset-md-8' as={Link} to="/Semis">SEMINARIOS</Nav.Link>
+      <Nav.Link className='col-md-2 offset-md-9' as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
       </Nav>
 
       {count==true&&(
-        <Button onClick={Logout} variant="danger">Cerrar Sesión</Button>
+        <Row>
+          <Col className='col-md-4'>
+            <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' >Mi Proyecto</Button>
+          </Col>
+          <Col className='offset-md-3'>
+            <Button onClick={Logout} variant="danger" size='sm'>Cerrar Sesión</Button>
+          </Col >
+            
+        </Row>
+        
       )}
       {count==false&&(
         <Button as={Link} to= "/Login" variant="outline-success">Iniciar Sesión</Button>
@@ -63,23 +87,30 @@ const Logout=()=>{
 
     <Row >
       <Col className='col-md-4'> 
-        <Exposicion title= "ChainVote" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
+        <Exposicion title= "ChainVote" facebook="https://www.facebook.com/Chainvote/" instagram="https://www.instagram.com/chainvote.cl/" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
       </Col> 
       <Col className='col-md-4'>
-        <Exposicion title= "Cooperaty" description="Cooperaty es una plataforma descentralizada que te permite aprender a invertir y mejorar tus habilidades sin importar tu nivel de experiencia en inversiones." link="https://cooperaty.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=HRxWAJ0HqN4&ab_channel=CyMon"/>
+        <Exposicion title= "Cooperaty" facebook="https://www.facebook.com/cooperatyapp" instagram="https://www.instagram.com/cooperatyapp/?utm_source=ig_embed&ig_rid=366e6cfd-d868-4d9c-9efa-d5b58ad9f480" description="Cooperaty es una plataforma descentralizada que te permite aprender a invertir y mejorar tus habilidades sin importar tu nivel de experiencia en inversiones." link="https://cooperaty.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=HRxWAJ0HqN4&ab_channel=CyMon"/>
       </Col>
       <Col className='col-md-4'>
-        <Exposicion title= "Price2Be" description="Sugerencia de Precio utilizando Inteligencia Artificial sumado a un Estudio de Mercado con información valiosa para vendedores a modo de potenciar las ventas dentro de Marketplaces." link="https://price2be.feriadesoftware.cl/#/" url="https://www.youtube.com/watch?v=d_rIDkm7huE&ab_channel=Price2Be"/>
+        <Exposicion title= "Price2Be" facebook="https://www.facebook.com/price2be" instagram="https://www.instagram.com/price2be/" description="Sugerencia de Precio utilizando Inteligencia Artificial sumado a un Estudio de Mercado con información valiosa para vendedores a modo de potenciar las ventas dentro de Marketplaces." link="https://price2be.feriadesoftware.cl/#/" url="https://www.youtube.com/watch?v=d_rIDkm7huE&ab_channel=Price2Be"/>
       </Col>
     </Row>
     <br/>
     <Row >
-      <Col className='col-md-4'> 
-        <Exposicion title= "MagiClass" description="Magiclass es una plataforma de apoyo al aprendizaje que otorga diferentes herramientas para profesores." link="https://magiclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=p1GGxl2BpsQ&ab_channel=Magiclass" />
-      </Col> 
+     <Col className='col-md-4'> 
+     <Exposicion title= "MagiClass" facebook="https://www.facebook.com/Magiclass-255165123054042" instagram="https://www.instagram.com/magiclass.cl/" description="Magiclass es una plataforma de apoyo al aprendizaje que otorga diferentes herramientas para profesores." link="https://magiclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=p1GGxl2BpsQ&ab_channel=Magiclass" />
+     </Col> 
+     <Col className='col-md-4'>
+     <Exposicion title= "Lyzerclass" facebook="https://www.facebook.com/LyzerClass-FESW-103901782054504" instagram="https://www.instagram.com/lyzerclass/" description="Recibe feedback de tus clases online de manera rápida y sencilla. Sube tu grabación y empieza a revisar tus resultados." link="https://lyzerclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=3H_MW1Tz6eg&feature=emb_logo&ab_channel=LyzerClass"/>
+     </Col>
+
+    {Titulo != "" &&(
       <Col className='col-md-4'>
-        <Exposicion title= "Lyzerclass" description="Recibe feedback de tus clases online de manera rápida y sencilla. Sube tu grabación y empieza a revisar tus resultados." link="https://lyzerclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=3H_MW1Tz6eg&feature=emb_logo&ab_channel=LyzerClass"/>
+      <Exposicion title= {Titulo} description={Descripcion} link={website} url= {url}/>
       </Col>
+    )}
+
     </Row>
     </Container>  
   </Route>
@@ -98,7 +129,7 @@ const Logout=()=>{
       </Col>
     </Container>   
   </Route>
-
+  <Route path="/Proyect" exact render = {props=> ( <Proyect {...props} />)}></Route>
   <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
 </Switch>
 
