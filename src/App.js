@@ -12,6 +12,11 @@ import { BrowserRouter as Router, Route, Switch, Link } from  'react-router-dom'
 import Login from "./components/login.js";
 import {useSelector, useDispatch} from 'react-redux';
 import { logout } from './redux/actions/autentication';
+import Proyect from './components/form_proyecto.js';
+
+
+
+
 function App() {
   const count= useSelector((store) =>store.autenticacion.logged);
   const Name=useSelector((store) =>store.autenticacion.Nombre);
@@ -43,7 +48,7 @@ const Logout=()=>{
       {count==true&&(
         <Row>
           <Col className='col-md-4'>
-            <Button onClick={Logout} variant="outline-info" size='sm' >Mi Proyecto</Button>
+            <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' >Mi Proyecto</Button>
           </Col>
           <Col className='offset-md-3'>
             <Button onClick={Logout} variant="danger" size='sm'>Cerrar Sesión</Button>
@@ -109,7 +114,7 @@ const Logout=()=>{
      
     </Container>   
   </Route>
-
+  <Route path= '/Proyect'><Proyect/></Route>
   <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
 </Switch>
 
