@@ -20,6 +20,16 @@ import Proyect from './components/form_proyecto.js';
 function App() {
   const count= useSelector((store) =>store.autenticacion.logged);
   const Name=useSelector((store) =>store.autenticacion.Nombre);
+
+  const Titulo= useSelector((store)=> store.proyect_reducer.Titulo)
+  const Descripcion= useSelector((store)=> store.proyect_reducer.Descripcion)
+  const url= useSelector((store)=> store.proyect_reducer.video)
+  const website = useSelector((store)=>store.proyect_reducer.website)
+
+
+
+
+
   const dispatch = useDispatch();
   if (count){
     var xd = "xd"
@@ -95,6 +105,13 @@ const Logout=()=>{
      <Col className='col-md-4'>
      <Exposicion title= "Lyzerclass" description="Recibe feedback de tus clases online de manera rápida y sencilla. Sube tu grabación y empieza a revisar tus resultados." link="https://lyzerclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=3H_MW1Tz6eg&feature=emb_logo&ab_channel=LyzerClass"/>
      </Col>
+
+    {Titulo != "" &&(
+      <Col className='col-md-4'>
+      <Exposicion title= {Titulo} description={Descripcion} link={website} url= {url}/>
+      </Col>
+    )}
+
     </Row>
     </Container>  
   </Route>
@@ -114,7 +131,7 @@ const Logout=()=>{
      
     </Container>   
   </Route>
-  <Route path= '/Proyect'><Proyect/></Route>
+  <Route path="/Proyect" exact render = {props=> ( <Proyect {...props} />)}></Route>
   <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
 </Switch>
 
