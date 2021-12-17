@@ -16,8 +16,8 @@ function Expos(props){
               className='react-player'
               controls='true'
               loop='true'
-              width='100%'
-              height='100%'
+              width='auto'
+              height='auto'
               progressInterval={1000}
             />
           </div>

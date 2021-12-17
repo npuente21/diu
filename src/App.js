@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import ReactPlayer from 'react-player'
 import './App.css';
 import {Navbar, Form, FormControl, Nav, Container, Button, Row, Col} from 'react-bootstrap' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
-import upload from "./images/upload.png";
 import logoFeria from "./images/logo-fesw.png";
 import Seminario from "./components/Seminarios.js"
 import semi1 from "./images/semi1.jpeg";
@@ -64,24 +62,24 @@ const Logout=()=>{
 </center>
 
     <Row >
-     <Col className='col-md-4'> 
-     <Exposicion title= "ChainVote" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
-     </Col> 
-     <Col className='col-md-4'>
-     <Exposicion title= "Cooperaty" description="Cooperaty es una plataforma descentralizada que te permite aprender a invertir y mejorar tus habilidades sin importar tu nivel de experiencia en inversiones." link="https://cooperaty.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=HRxWAJ0HqN4&ab_channel=CyMon"/>
-     </Col>
-     <Col className='col-md-4'>
-     <Exposicion title= "Price2Be" description="Sugerencia de Precio utilizando Inteligencia Artificial sumado a un Estudio de Mercado con información valiosa para vendedores a modo de potenciar las ventas dentro de Marketplaces." link="https://price2be.feriadesoftware.cl/#/" url="https://www.youtube.com/watch?v=d_rIDkm7huE&ab_channel=Price2Be"/>
-     </Col>
+      <Col className='col-md-4'> 
+        <Exposicion title= "ChainVote" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
+      </Col> 
+      <Col className='col-md-4'>
+        <Exposicion title= "Cooperaty" description="Cooperaty es una plataforma descentralizada que te permite aprender a invertir y mejorar tus habilidades sin importar tu nivel de experiencia en inversiones." link="https://cooperaty.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=HRxWAJ0HqN4&ab_channel=CyMon"/>
+      </Col>
+      <Col className='col-md-4'>
+        <Exposicion title= "Price2Be" description="Sugerencia de Precio utilizando Inteligencia Artificial sumado a un Estudio de Mercado con información valiosa para vendedores a modo de potenciar las ventas dentro de Marketplaces." link="https://price2be.feriadesoftware.cl/#/" url="https://www.youtube.com/watch?v=d_rIDkm7huE&ab_channel=Price2Be"/>
+      </Col>
     </Row>
     <br/>
     <Row >
-     <Col className='col-md-4'> 
-     <Exposicion title= "MagiClass" description="Magiclass es una plataforma de apoyo al aprendizaje que otorga diferentes herramientas para profesores." link="https://magiclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=p1GGxl2BpsQ&ab_channel=Magiclass" />
-     </Col> 
-     <Col className='col-md-4'>
-     <Exposicion title= "Lyzerclass" description="Recibe feedback de tus clases online de manera rápida y sencilla. Sube tu grabación y empieza a revisar tus resultados." link="https://lyzerclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=3H_MW1Tz6eg&feature=emb_logo&ab_channel=LyzerClass"/>
-     </Col>
+      <Col className='col-md-4'> 
+        <Exposicion title= "MagiClass" description="Magiclass es una plataforma de apoyo al aprendizaje que otorga diferentes herramientas para profesores." link="https://magiclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=p1GGxl2BpsQ&ab_channel=Magiclass" />
+      </Col> 
+      <Col className='col-md-4'>
+        <Exposicion title= "Lyzerclass" description="Recibe feedback de tus clases online de manera rápida y sencilla. Sube tu grabación y empieza a revisar tus resultados." link="https://lyzerclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=3H_MW1Tz6eg&feature=emb_logo&ab_channel=LyzerClass"/>
+      </Col>
     </Row>
     </Container>  
   </Route>
@@ -98,7 +96,6 @@ const Logout=()=>{
           <Seminario title="Objetivos de Desarrollo Sostenible" description=" Charla de Alfredo Collado en la que se hablará sobre la importacnia de los ODS en el mundo" img={semi2} linksem="/Semis/seminario2" />
         </Col>
       </Col>
-     
     </Container>   
   </Route>
 
