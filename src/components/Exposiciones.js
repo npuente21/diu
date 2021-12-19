@@ -4,7 +4,7 @@ import {Col, Row, Container, Button, Alert, Table, Card} from 'react-bootstrap';
 import "./descripcion.css";
 import logoFacebook from "../images/facebook.png";
 import logoInstagram from "../images/instagram.png";
-import logoTwitter from "../images/twitter.png";
+import logoLinkedin from "../images/linkedin.png";
 import {Link} from  'react-router-dom';
 
 function Expos(props){
@@ -20,7 +20,7 @@ function Expos(props){
               controls='true'
               loop='true'
               width='auto'
-              height='auto'
+              height='auto'x
               progressInterval={1000}
             />
           </div>
@@ -51,8 +51,8 @@ function Expos(props){
                   </Col >
                   
                   <Col className='col-md-4' display='flex'>
-                    <a href={props.twitter} target="_blank">
-                      <img src={logoTwitter} alt="logo" width="55" height="55"/>
+                    <a href={props.linkedin} target="_blank">
+                      <img src={logoLinkedin} alt="logo" width="55" height="55"/>
                     </a>
                   </Col >
                 </Row>
@@ -62,10 +62,6 @@ function Expos(props){
           </Card>
           
         </Container>
-
-    
-
-
     ); 
     
 }

@@ -24,10 +24,9 @@ function App() {
   const Descripcion= useSelector((store)=> store.proyect_reducer.Descripcion)
   const url= useSelector((store)=> store.proyect_reducer.video)
   const website = useSelector((store)=>store.proyect_reducer.website)
-
-
-
-
+  const facebook = useSelector((store)=>store.proyect_reducer.facebook)
+  const instagram = useSelector((store)=>store.proyect_reducer.instagram)
+  const twitter = useSelector((store)=>store.proyect_reducer.twitter)
 
   const dispatch = useDispatch();
   if (count){
@@ -80,14 +79,15 @@ const Logout=()=>{
   <Route path="/Expos">
     <Container>
     <center>
-<h1>Feria de Software {Name}</h1> 
-<br/>
-<br/>
-</center>
+      <h1>Feria de Software {Name}</h1> 
+      <h3>{Titulo+"chao"}"</h3>
+      <br/>
+      <br/>
+    </center>
 
     <Row >
       <Col className='col-md-4'> 
-        <Exposicion title= "ChainVote" facebook="https://www.facebook.com/Chainvote/" instagram="https://www.instagram.com/chainvote.cl/" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
+        <Exposicion title= "ChainVote" facebook="https://www.facebook.com/Chainvote/" instagram="https://www.instagram.com/chainvote.cl/" linkedin="https://www.linkedin.com/company/team-votti/" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
       </Col> 
       <Col className='col-md-4'>
         <Exposicion title= "Cooperaty" facebook="https://www.facebook.com/cooperatyapp" instagram="https://www.instagram.com/cooperatyapp/?utm_source=ig_embed&ig_rid=366e6cfd-d868-4d9c-9efa-d5b58ad9f480" description="Cooperaty es una plataforma descentralizada que te permite aprender a invertir y mejorar tus habilidades sin importar tu nivel de experiencia en inversiones." link="https://cooperaty.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=HRxWAJ0HqN4&ab_channel=CyMon"/>
@@ -99,7 +99,7 @@ const Logout=()=>{
     <br/>
     <Row >
      <Col className='col-md-4'> 
-     <Exposicion title= "MagiClass" facebook="https://www.facebook.com/Magiclass-255165123054042" instagram="https://www.instagram.com/magiclass.cl/" description="Magiclass es una plataforma de apoyo al aprendizaje que otorga diferentes herramientas para profesores." link="https://magiclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=p1GGxl2BpsQ&ab_channel=Magiclass" />
+     <Exposicion title= "MagiClass" facebook="https://www.facebook.com/Magiclass-255165123054042" instagram="https://www.instagram.com/magiclass.cl/" linkedin="https://www.linkedin.com/company/rubber-duck-cl/" description="Magiclass es una plataforma de apoyo al aprendizaje que otorga diferentes herramientas para profesores." link="https://magiclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=p1GGxl2BpsQ&ab_channel=Magiclass" />
      </Col> 
      <Col className='col-md-4'>
      <Exposicion title= "Lyzerclass" facebook="https://www.facebook.com/LyzerClass-FESW-103901782054504" instagram="https://www.instagram.com/lyzerclass/" description="Recibe feedback de tus clases online de manera rápida y sencilla. Sube tu grabación y empieza a revisar tus resultados." link="https://lyzerclass.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=3H_MW1Tz6eg&feature=emb_logo&ab_channel=LyzerClass"/>
@@ -107,7 +107,7 @@ const Logout=()=>{
 
     {Titulo != "" &&(
       <Col className='col-md-4'>
-      <Exposicion title= {Titulo} description={Descripcion} link={website} url= {url}/>
+      <Exposicion title={Titulo} facebook={facebook} instagram={instagram} linkedin={twitter} description={Descripcion} link={website} url= {url}/>
       </Col>
     )}
 

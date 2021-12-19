@@ -19,6 +19,7 @@ function proyect(props){
     const [website, SetWeb] = useState("")
 
     const dispatch = useDispatch()
+    
     const handleTitle=(e) =>{
         SetTitulo(e.target.value);
       }
@@ -53,7 +54,7 @@ function proyect(props){
             {Titulo: titulo, 
             Descripcion: descripcion,
             video: url_youtube,
-            facebook: url_face,
+            facebook: url_face,   
             twitter: url_twitter,
             instagram: url_insta,
             website: website,
