@@ -41,7 +41,7 @@ const Logout=()=>{
 
   return (
     <Router>
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="xl" fixed="top">
   <Container>
     <Navbar.Brand as={Link} to="/">
           <img src={logoFeria} alt="logo" width="120" height="70"/>
@@ -55,7 +55,6 @@ const Logout=()=>{
 
       {count==true&&(
         <Row>
-<<<<<<< HEAD
          <Col>
          <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' className='boton' >Crear Proyecto</Button>
          </Col>
@@ -68,13 +67,6 @@ const Logout=()=>{
             <NavDropdown.Item as={Button} onClick={Logout} >Cerrar Sesion</NavDropdown.Item>
 
             </NavDropdown>
-=======
-          <Col className='col-md-7'>
-            <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' >Crear Proyecto</Button>
-          </Col>
-          <Col className='col-md-4'>
-            <Button onClick={Logout} variant="danger" size='sm'>Cerrar Sesión</Button>
->>>>>>> 274bd645a63ad44275ae6ae91744367c000e0fff
           </Col >
         </Row>
         
