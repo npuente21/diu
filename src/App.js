@@ -115,6 +115,7 @@ const Logout=()=>{
 
   <Route path="/Semis">
     <Container>
+      <br></br>
       <Row>
         <Col className='col-md-6'>
             <Seminario  title="Transformación Digital" description="Charla de Joaquín Trujillo en la que se nos instruirá sobre los cambios para la transformación digital" img={semi1} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
