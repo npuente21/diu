@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Navbar, Form, FormControl, Nav, Container, Button, Row, Col} from 'react-bootstrap' 
+import {Navbar, Form, FormControl, Nav, Container, Button, Row, Col, NavDropdown} from 'react-bootstrap' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
 import Footer from "./components/Footer.js"
@@ -17,7 +17,7 @@ import Login from "./components/login.js";
 import {useSelector, useDispatch} from 'react-redux';
 import { logout } from './redux/actions/autentication';
 import Proyect from './components/form_proyecto.js';
-
+import user from "./person-fill.svg";
 
 
 
@@ -50,16 +50,23 @@ const Logout=()=>{
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
       <Nav.Link className='col-md-11 offset-md-8' as={Link} to="/Semis">SEMINARIOS</Nav.Link>
-      <Nav.Link className='col-md-2 offset-md-9' as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
+      <Nav.Link className='offset-md-9' as={Link} to="/Expos">EXPOSICIONES</Nav.Link>
       </Nav>
 
       {count==true&&(
         <Row>
-          <Col className='col-md-4'>
-            <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' >Mi Proyecto</Button>
-          </Col>
-          <Col className='offset-md-3'>
-            <Button onClick={Logout} variant="danger" size='sm'>Cerrar Sesión</Button>
+         <Col>
+         <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' className='boton' >Crear Proyecto</Button>
+         </Col>
+          
+          
+          <Col className='cerrar-sesion'>
+            <NavDropdown title = {<img src={user} width= "40px"/>}>
+            <NavDropdown.Item  >{Name}</NavDropdown.Item>
+            <NavDropdown.Divider/>
+            <NavDropdown.Item as={Button} onClick={Logout} >Cerrar Sesion</NavDropdown.Item>
+
+            </NavDropdown>
           </Col >
             
         </Row>

@@ -19,6 +19,17 @@
   margin-top: 40px;
   margin-bottom: auto;
 }
+
+
+.cerrar-sesion{
+  margin-left: 100px;
+  margin-right: -100px;
+}
+
+.boton{
+  margin-right: -300px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
