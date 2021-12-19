@@ -79,7 +79,6 @@ const Logout=()=>{
     <Container>
     <center>
       <h1>Feria de Software {Name}</h1> 
-      <h3>{Titulo+"chao"}"</h3>
       <br/>
       <br/>
     </center>
@@ -131,17 +130,22 @@ const Logout=()=>{
   <Route path="/Proyect" exact render = {props=> ( <Proyect {...props} />)}></Route>
   <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
   <Route path="/">
+
+    <center>
+      <h1>Feria de Software {Name}</h1> 
+      <br/>
+    </center>
      <center>
       <Carrusel img1={fsw1} img2={fsw2} img3={fsw3}>
   
       </Carrusel>
      </center>
-     <div class="">
-       <h5>
+     <div class="text">
+       <p>
          Esta actividad se ha consolidado a lo largo del tiempo como una oportunidad en que los alumnos del Departamento de Informática de la Casa Central y del Campus Santiago de la Universidad Técnica Federico Santa María, muestran a la comunidad sus conocimientos, capacidad creativa, trabajo en equipo y emprendimiento.
          La idea central de esta iniciativa es potenciar la formación profesional de los estudiantes, a través de la fabricación de productos de software, que solucionen una problemática real de nuestra sociedad, y además, reafirmar la apuesta-país de desarrollo e innovación tecnológica, como así también fomentar la capacidad emprendedora en los jóvenes expositores.
          La Feria de Software es la culminación de un proceso de meses de arduo trabajo que comienza cuando se forman equipos que conciben una idea de proyecto, definen metas, eligen a un líder o jefe de proyecto y desarrollan un producto bajo los conceptos de la Ingeniería de Software, lo que suele exigir el aprendizaje de nuevas herramientas, metodologías, técnicas de desarrollo y trabajo en equipo. Es una instancia educativa centrada en el “aprender-haciendo”.
-       </h5>
+       </p>
      </div>
       
 
