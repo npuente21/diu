@@ -7,8 +7,8 @@ import Footer from "./components/Footer.js"
 import logoFeria from "./images/logo-fesw.png";
 import Seminario from "./components/Seminarios.js"
 import Carrusel from "./components/Landing.js"
-import semi1 from "./images/semi1.jpeg";
-import semi2 from "./images/semi2.jpg";
+import semi1 from "./images/semi1.0.png";
+import semi2 from "./images/semi2.0.jpg";
 import fsw1 from "./images/fsw1.jpg"
 import fsw2 from "./images/fsw2.jpg"
 import fsw3 from "./images/fsw3.jpg"
