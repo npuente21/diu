@@ -55,13 +55,12 @@ const Logout=()=>{
 
       {count==true&&(
         <Row>
-          <Col className='col-md-4'>
-            <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' >Mi Proyecto</Button>
+          <Col className='col-md-7'>
+            <Button as={Link} to= "/Proyect" variant="outline-info" size='sm' >Crear Proyecto</Button>
           </Col>
-          <Col className='offset-md-3'>
+          <Col className='col-md-4'>
             <Button onClick={Logout} variant="danger" size='sm'>Cerrar Sesión</Button>
           </Col >
-            
         </Row>
         
       )}
@@ -116,16 +115,15 @@ const Logout=()=>{
 
   <Route path="/Semis">
     <Container>
-      <Col>
-        <Col className='col-md-4'>
-          <Seminario  title="Transformación Digital" description="Charla de Joaquín Trujillo en la que se nos instruirá sobre los cambios para la transformación digital" img={semi1} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
+      <Row>
+        <Col className='col-md-6'>
+            <Seminario  title="Transformación Digital" description="Charla de Joaquín Trujillo en la que se nos instruirá sobre los cambios para la transformación digital" img={semi1} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
         </Col>
-        <br/>
-        <br/>
-        <Col className='col-md-4'>
-          <Seminario title="Objetivos de Desarrollo Sostenible" description=" Charla de Alfredo Collado en la que se hablará sobre la importacnia de los ODS en el mundo" img={semi2} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
+
+        <Col className='col-md-6'>
+            <Seminario title="Objetivos de Desarrollo Sostenible" description=" Charla de Alfredo Collado en la que se hablará sobre la importacnia de los ODS en el mundo" img={semi2} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
         </Col>
-      </Col>
+      </Row>
     </Container>   
   </Route>
   <Route path="/Proyect" exact render = {props=> ( <Proyect {...props} />)}></Route>
