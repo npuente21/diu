@@ -51,7 +51,7 @@ function proyect(props){
       const Submit=(e)=>{ 
         e.preventDefault();
         dispatch(almacenar_proyecto(
-            {Titulo: titulo, 
+            {titulo: titulo, 
             Descripcion: descripcion,
             video: url_youtube,
             facebook: url_face,   
