@@ -26,16 +26,16 @@ function Expos(props){
           </div>
             <Card.Body>
               <Card.Title>
-                <center><b>{props.title}</b></center>
+                <center>
+                  <b><a target="_blank" href={props.link} className='titulosProyectos'>{props.title}</a>
+                  </b>
+                </center>
               </Card.Title>
               <Card.Text>
                 <center className='desc'>
                   {props.description}
                 </center>
               </Card.Text>
-              <a href ={props.link} target="_blank"> 
-                <center> Más Información</center>
-              </a>
               <br/>
               <center>
                 <Row>
