@@ -5,8 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
 import logoFeria from "./images/logo-fesw.png";
 import Seminario from "./components/Seminarios.js"
+import Carrusel from "./components/Landing.js"
 import semi1 from "./images/semi1.jpeg";
 import semi2 from "./images/semi2.jpg";
+import fsw1 from "./images/fsw1.jpg"
+import fsw2 from "./images/fsw2.jpg"
+import fsw3 from "./images/fsw3.jpg"
 import { BrowserRouter as Router, Route, Switch, Link } from  'react-router-dom';
 import Login from "./components/login.js";
 import {useSelector, useDispatch} from 'react-redux';
@@ -44,7 +48,7 @@ const Logout=()=>{
     <Navbar bg="light" expand="lg">
   <Container>
     <Navbar.Brand href="">
-      <a href="/Expos"><img src={logoFeria} alt="logo" width="120" height="70"/></a>
+      <a href="/Home"><img src={logoFeria} alt="logo" width="120" height="70"/></a>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -119,18 +123,35 @@ const Logout=()=>{
     <Container>
       <Col>
         <Col className='col-md-4'>
-          <Seminario  title="Transformación Digital" description="Charla de Joaquín Trujillo en la que se nos instruirá sobre los cambios para la transformación digital" img={semi1} linksem="/Semis/seminario1" />
+          <Seminario  title="Transformación Digital" description="Charla de Joaquín Trujillo en la que se nos instruirá sobre los cambios para la transformación digital" img={semi1} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
         </Col>
         <br/>
         <br/>
         <Col className='col-md-4'>
-          <Seminario title="Objetivos de Desarrollo Sostenible" description=" Charla de Alfredo Collado en la que se hablará sobre la importacnia de los ODS en el mundo" img={semi2} linksem="/Semis/seminario2" />
+          <Seminario title="Objetivos de Desarrollo Sostenible" description=" Charla de Alfredo Collado en la que se hablará sobre la importacnia de los ODS en el mundo" img={semi2} linksem="https://us02web.zoom.us/j/86385760929?pwd=dGdVRWlPbi9jSWx1bWpObGo4VElVZz09#success" />
         </Col>
       </Col>
     </Container>   
   </Route>
   <Route path="/Proyect" exact render = {props=> ( <Proyect {...props} />)}></Route>
   <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
+  <Route path="/Home">
+     <center>
+      <Carrusel img1={fsw1} img2={fsw2} img3={fsw3}>
+  
+      </Carrusel>
+     </center>
+     <div>
+       <h4>
+         Esta actividad se ha consolidado a lo largo del tiempo como una oportunidad en que los alumnos del Departamento de Informática de la Casa Central y del Campus Santiago de la Universidad Técnica Federico Santa María, muestran a la comunidad sus conocimientos, capacidad creativa, trabajo en equipo y emprendimiento.
+         La idea central de esta iniciativa es potenciar la formación profesional de los estudiantes, a través de la fabricación de productos de software, que solucionen una problemática real de nuestra sociedad, y además, reafirmar la apuesta-país de desarrollo e innovación tecnológica, como así también fomentar la capacidad emprendedora en los jóvenes expositores.
+         La Feria de Software es la culminación de un proceso de meses de arduo trabajo que comienza cuando se forman equipos que conciben una idea de proyecto, definen metas, eligen a un líder o jefe de proyecto y desarrollan un producto bajo los conceptos de la Ingeniería de Software, lo que suele exigir el aprendizaje de nuevas herramientas, metodologías, técnicas de desarrollo y trabajo en equipo. Es una instancia educativa centrada en el “aprender-haciendo”.
+       </h4>
+     </div>
+      
+
+    
+  </Route>
 </Switch>
 
 </Router>
