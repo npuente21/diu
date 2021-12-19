@@ -16,7 +16,7 @@ function Semis(props){
                         </Card.Text>
                     </Col>
                     <Col>
-                        <Button className='sem' href={props.linksem}>Entrar</Button>
+                        <Button className='sem' href={props.linksem} target= "_blank">Entrar</Button>
                     </Col>
                 </Row>
                 <br/>
