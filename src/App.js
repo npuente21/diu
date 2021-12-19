@@ -3,6 +3,7 @@ import './App.css';
 import {Navbar, Form, FormControl, Nav, Container, Button, Row, Col} from 'react-bootstrap' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Exposicion from "./components/Exposiciones.js"
+import Footer from "./components/Footer.js"
 import logoFeria from "./images/logo-fesw.png";
 import Seminario from "./components/Seminarios.js"
 import semi1 from "./images/semi1.jpeg";
@@ -80,7 +81,6 @@ const Logout=()=>{
     <Container>
     <center>
       <h1>Feria de Software {Name}</h1> 
-      <h3>{Titulo+"chao"}"</h3>
       <br/>
       <br/>
     </center>
@@ -132,7 +132,8 @@ const Logout=()=>{
   <Route path="/Proyect" exact render = {props=> ( <Proyect {...props} />)}></Route>
   <Route path="/Login" exact render = {props=> ( <Login {...props} />)}></Route>
 </Switch>
-
+<br/>
+<Footer />
 </Router>
   );
 }
