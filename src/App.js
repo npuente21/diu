@@ -132,7 +132,7 @@ const Logout=()=>{
   <Route path="/">
 
     <center>
-      <h1>Feria de Software {Name}</h1> 
+      <h1>Feria de Software</h1> 
       <br/>
     </center>
      <center>
