@@ -68,19 +68,19 @@ function proyect(props){
                         
         <Form className='Form'>
             <Form.Group className="mb-3" controlId="Title">
-                <Form.Label>TITULO</Form.Label>
+                <Form.Label><b>TÍTULO</b></Form.Label>
                 <Form.Control  placeholder="Titulo" onChange={handleTitle}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label><img src ={youtube} width="40" height="40" ></img></Form.Label>
+                <Form.Label><img src ={youtube} width="40" height="40" ></img><b>   VIDEO</b></Form.Label>
                 <Form.Control type="text" placeholder='URL:'  onChange={handleYoutube} />
             </Form.Group>
 
 
             <Row className="mb-5">
                 <Form.Group as={Col}  controlId="formGridEmail">
-                    <Form.Label > <img src ={facebook} width="40" height="40" ></img> </Form.Label>
+                    <Form.Label > <img src ={facebook} width="40" height="40" ></img></Form.Label>
                     <Form.Control type="text" placeholder='URL:'   onChange={handleFace} />
                 </Form.Group>
 
@@ -97,13 +97,13 @@ function proyect(props){
 
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label><img src ={pc} width="40" height="40" ></img></Form.Label>
+                <Form.Label><img src ={pc} width="40" height="40" ></img><b>   PÁGINA WEB</b></Form.Label>
                 <Form.Control type="text" placeholder='URL:'  onChange={handleWeb} />
             </Form.Group>
 
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Descripción</Form.Label>
+                <Form.Label><b>DESCRIPCIÓN DEL PROYECTO</b></Form.Label>
                 <Form.Control as="textarea" rows={3} onChange={handleDescrip} />
             </Form.Group>
 

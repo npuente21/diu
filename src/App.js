@@ -87,7 +87,7 @@ const Logout=()=>{
     <Row >
       <Col className='col-md-4'> 
         <Exposicion title= "ChainVote" facebook="https://www.facebook.com/Chainvote/" instagram="https://www.instagram.com/chainvote.cl/" linkedin="https://www.linkedin.com/company/team-votti/" description="ChainVote consiste en una aplicación de votación segura y anónima basada en blockchain y algoritmos de inteligencia artificial para así garantizar la seguridad y identidad del voto emitido" link="https://chainvote.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=4WcDnVQGIQc&ab_channel=ChainVote" />
-      </Col> 
+      </Col>  
       <Col className='col-md-4'>
         <Exposicion title= "Cooperaty" facebook="https://www.facebook.com/cooperatyapp" instagram="https://www.instagram.com/cooperatyapp/?utm_source=ig_embed&ig_rid=366e6cfd-d868-4d9c-9efa-d5b58ad9f480" description="Cooperaty es una plataforma descentralizada que te permite aprender a invertir y mejorar tus habilidades sin importar tu nivel de experiencia en inversiones." link="https://cooperaty.feriadesoftware.cl/" url="https://www.youtube.com/watch?v=HRxWAJ0HqN4&ab_channel=CyMon"/>
       </Col>
