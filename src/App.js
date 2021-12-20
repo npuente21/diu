@@ -41,7 +41,7 @@ const Logout=()=>{
 
   return (
     <Router>
-    <Navbar bg="light" expand="xl" fixed="top">
+    <Navbar bg="light" expand="xl" >
   <Container>
     <Navbar.Brand as={Link} to="/">
           <img src={logoFeria} alt="logo" width="120" height="70"/>

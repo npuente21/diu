@@ -6,6 +6,7 @@ import "./seminario2.css";
 function Semis(props){
     return (
     <Container>
+        <br/>
         <Card style={{ width: '34rem'}}>
             <Card.Img variant="top" src={props.img}  />
             <Card.Body>
